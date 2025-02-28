@@ -12,4 +12,7 @@ import { TagsComponent } from '../../components/tags/tags.component';
 })
 export class DetailsComponent {
   postService = inject(PostServicesService);
+  constructor() {
+    this.postService.isMinimizedNav.set(true);
+  }
 }

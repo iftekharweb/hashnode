@@ -1,6 +1,10 @@
-<div class="w-full flex flex-col">
+<div
+  class="w-full flex flex-col"
+  (click)="setPostToShow(maxReadTimesPost())"
+  routerLink="/blog/{{ maxReadTimesPost()?.title }}"
+>
   <img
-    src={{maxReadTimesPost()?.imgUrl}}
+    src="{{ maxReadTimesPost()?.imgUrl }}"
     alt="blog-image"
     class="border border-gray-200 rounded-lg"
   />
@@ -8,11 +12,17 @@
 <div class="flex flex-col p-5 gap-4">
   <button
     class="text-4xl font-semibold text-gray-900 hover:text-gray-600 text-left"
+    (click)="setPostToShow(maxReadTimesPost())"
+    routerLink="/blog/{{ maxReadTimesPost()?.title }}"
   >
-    {{maxReadTimesPost()?.title}}
+    {{ maxReadTimesPost()?.title }}
   </button>
-  <p class="text-lg text-gray-500 truncate">
-    {{maxReadTimesPost()?.body}}
+  <p
+    class="text-lg text-gray-500 truncate"
+    (click)="setPostToShow(maxReadTimesPost())"
+    routerLink="/blog/{{ maxReadTimesPost()?.title }}"
+  >
+    {{ maxReadTimesPost()?.body }}
   </p>
   <app-author />
 </div>

@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.fetchAllPosts();
+    this.postService.isMinimizedNav.set(false);
   }
 
   fetchAllPosts() {

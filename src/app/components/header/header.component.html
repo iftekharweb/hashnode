@@ -1,20 +1,77 @@
-<div class="w-full border-b border-gray-200 pt-7 pb-4 px-4 md:px-8">
-  <div class="flex flex-col md:flex-row justify-between items-center mb-5 text-center md:text-left">
-    <p class="text-2xl font-bold">Iftekhar Md Shishir</p>
-    <div class="flex text-gray-800 mt-3 md:mt-0">
-      <button class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center">
+@if(postService.isMinimizedNav()) {
+<div class="w-full border-b border-gray-200 pt-4 pb-4 px-4 sm:px-6 md:px-8">
+  <div class="flex justify-between items-center">
+    <div class="flex gap-1 items-center">
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center hidden sm:flex"
+      >
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center sm:hidden"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button
+        class="text-xl sm:text-lg sm:text-left font-bold items-center"
+        routerLink="/"
+      >
+        Iftekhar Md Shishir
+      </button>
+    </div>
+    <div class="flex gap-1 items-center">
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center"
+      >
         <mat-icon>search</mat-icon>
       </button>
-      <button class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center">
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center hidden sm:flex"
+      >
         <mat-icon>bedtime</mat-icon>
       </button>
-      <button class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center">
+      <button
+        class="flex justify-center items-center rounded-3xl px-3 py-2 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white gap-1"
+      >
+        <mat-icon>person_add</mat-icon>
+        <p>Follow</p>
+      </button>
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center"
+      >
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+} @else {
+<div class="w-full border-b border-gray-200 pt-7 pb-4 px-4 md:px-8">
+  <div
+    class="flex flex-col md:flex-row justify-between items-center mb-5 text-center md:text-left"
+  >
+    <button class="text-2xl font-bold" routerLink="/">
+      Iftekhar Md Shishir
+    </button>
+    <div class="flex text-gray-800 mt-3 md:mt-0">
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center"
+      >
+        <mat-icon>bedtime</mat-icon>
+      </button>
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center"
+      >
         <mat-icon>keyboard_arrow_down</mat-icon>
       </button>
     </div>
   </div>
   <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-    <!-- Social Icons -->
     <div class="flex gap-2 justify-center md:justify-start items-center">
       <a href="" class="h-8 w-8 p-2 rounded-full hover:bg-gray-200">
         <img src="/twitter.png" alt="twitter" class="object-contain" />
@@ -33,20 +90,40 @@
       </a>
     </div>
 
-    <!-- Follow & Message Buttons -->
     <div class="flex justify-center md:justify-end items-center gap-2">
-      <button class="flex justify-center items-center rounded-3xl px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white gap-1">
+      <button
+        class="flex justify-center items-center rounded-3xl px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white gap-1"
+      >
         <mat-icon>person_add</mat-icon>
         <p>Follow</p>
       </button>
-      <button class="rounded-full p-2 hover:bg-blue-200 border border-blue-500 flex justify-center items-center">
+      <button
+        class="rounded-full p-2 hover:bg-blue-200 border border-blue-500 flex justify-center items-center"
+      >
         <mat-icon class="text-blue-600">mark_email_unread</mat-icon>
       </button>
     </div>
   </div>
 
   <div class="flex justify-center items-center gap-3 mt-6">
-    <button class="py-1 px-2 rounded-xl hover:bg-gray-100 {{isHomeTab() ? 'font-semibold': ''}}" (click)="toggleTabs(true)" routerLink="/home">Home</button>
-    <button class="py-1 px-2 rounded-xl hover:bg-gray-100 {{isHomeTab() ? '': 'font-semibold'}}" (click)="toggleTabs(false)" routerLink="/newsletter">Newsletter</button>
+    <button
+      class="py-1 px-2 rounded-xl hover:bg-gray-100 {{
+        isHomeTab() ? 'font-semibold' : ''
+      }}"
+      (click)="toggleTabs(true)"
+      routerLink="/home"
+    >
+      Home
+    </button>
+    <button
+      class="py-1 px-2 rounded-xl hover:bg-gray-100 {{
+        isHomeTab() ? '' : 'font-semibold'
+      }}"
+      (click)="toggleTabs(false)"
+      routerLink="/newsletter"
+    >
+      Newsletter
+    </button>
   </div>
 </div>
+}
