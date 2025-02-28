@@ -1,15 +1,22 @@
 <div class="w-full flex flex-col">
-  <img
-    src={{post()?.imgUrl}}
-    alt="blog-image"
-    class="border border-gray-200 rounded-lg"
-  />
+  <button
+    (click)="post() ? setPostToShow(post()!) : null"
+    routerLink="/blog/{{ post()?.title }}"
+  >
+    <img
+      src="{{ post()?.imgUrl }}"
+      alt="blog-image"
+      class="border border-gray-200 rounded-lg"
+    />
+  </button>
 </div>
 <div class="flex flex-col p-5 gap-4">
   <button
     class="text-xl font-semibold text-gray-900 hover:text-gray-600 text-left"
+    (click)="post() ? setPostToShow(post()!) : null"
+    routerLink="/blog/{{ post()?.title }}"
   >
-    {{post()?.title}}
+    {{ post()?.title }}
   </button>
   <app-author />
 </div>

@@ -13,5 +13,9 @@ export const routes: Routes = [
     {
         path: 'newsletter',
         loadComponent: () => import('./newsletter/newsletter.component').then(m => m.NewsletterComponent)
+    },
+    {
+        path: 'blog/:title',
+        loadComponent: () => import('./blog/details/details.component').then(m => m.DetailsComponent)
     }
 ];

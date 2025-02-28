@@ -6,5 +6,6 @@ import { Post } from '../../models/app.models';
 })
 export class PostServicesService {
   posts = signal<Post[]>([]);
+  postToShow = signal<Post>({} as Post);
   constructor() { }
 }

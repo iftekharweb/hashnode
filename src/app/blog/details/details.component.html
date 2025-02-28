@@ -1,0 +1,38 @@
+<div class="py-10 px-60">
+  <div class="flex flex-col justify-center items-center gap-6">
+    <img
+      src="{{ postService.postToShow()?.imgUrl }}"
+      alt="blog-image"
+      class="object-cover rounded-lg w-full"
+    />
+    <p class="text-6xl text-center font-semibold">
+      {{ postService.postToShow()?.title }}
+    </p>
+    <div
+      class="flex justify-center items-center gap-2 text-xl text-gray-700 py-3"
+    >
+      <img
+        src="{{ postService.postToShow()?.authorImage }}"
+        alt="author-image"
+        class="h-12 w-12 object-cover rounded-full"
+      />
+      <p>{{ postService.postToShow()?.authonName }}</p>
+      <span>•</span>
+      <p>13 Aug 2024</p>
+      <span>•</span>
+      <p>📖 5 min read</p>
+    </div>
+    <!-- Table Of Contents -->
+
+    <div class="text-lg">
+      {{ postService.postToShow()?.body }}
+    </div>
+    <div class="flex justify-center items-center w-full">
+      <app-subscribe [author]="postService.postToShow()?.authonName" />
+    </div>
+
+    <div class="flex justify-center items-center gap-4">
+      <app-tags/>
+    </div>
+  </div>
+</div>

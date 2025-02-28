@@ -1,5 +1,4 @@
 <div class="w-full border-b border-gray-200 pt-7 pb-4 px-4 md:px-8">
-  <!-- Top Section: Name & Icons -->
   <div class="flex flex-col md:flex-row justify-between items-center mb-5 text-center md:text-left">
     <p class="text-2xl font-bold">Iftekhar Md Shishir</p>
     <div class="flex text-gray-800 mt-3 md:mt-0">
@@ -14,8 +13,6 @@
       </button>
     </div>
   </div>
-
-  <!-- Social Links & Follow Buttons -->
   <div class="flex flex-col md:flex-row justify-between items-center gap-4">
     <!-- Social Icons -->
     <div class="flex gap-2 justify-center md:justify-start items-center">
@@ -48,11 +45,8 @@
     </div>
   </div>
 
-  <!-- Tabs Section -->
   <div class="flex justify-center items-center gap-3 mt-6">
     <button class="py-1 px-2 rounded-xl hover:bg-gray-100 {{isHomeTab() ? 'font-semibold': ''}}" (click)="toggleTabs(true)" routerLink="/home">Home</button>
     <button class="py-1 px-2 rounded-xl hover:bg-gray-100 {{isHomeTab() ? '': 'font-semibold'}}" (click)="toggleTabs(false)" routerLink="/newsletter">Newsletter</button>
   </div>
-
-  <nav></nav>
 </div>
