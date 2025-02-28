@@ -1,16 +1,18 @@
-<section class="">
-  <div class="w-full flex justify-center bg-gray-50 px-10 py-10 border-b border-gray-300">
-    <div class="w-[65%] px-4">
+<section>
+  <div class="w-full flex flex-col lg:flex-row justify-center bg-gray-50 px-6 md:px-10 py-10 border-b border-gray-300">
+    <div class="w-full lg:w-[65%] px-4">
       <app-featured-main/>
     </div>
-    <div class="w-[35%] px-4">
+    <div class="w-full lg:w-[35%] px-4 mt-6 lg:mt-0">
       <app-featured-sidebar/>
     </div>
   </div>
-  <div class="flex justify-center items-center border-b border-gray-300">
+
+  <div class="flex justify-center items-center border-b border-gray-300 px-6 md:px-10 py-6">
     <app-profile/>
   </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-14 py-10 border-b border-gray-300">
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-6 md:px-14 py-10 border-b border-gray-300">
     @for (post of postService.posts(); track $index) {
       <div>
         <app-blog-card [post]="post"/>
