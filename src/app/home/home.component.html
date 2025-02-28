@@ -10,4 +10,11 @@
   <div class="flex justify-center items-center border-b border-gray-300">
     <app-profile/>
   </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-14 py-10 border-b border-gray-300">
+    @for (post of postService.posts(); track $index) {
+      <div>
+        <app-blog-card [post]="post"/>
+      </div>
+    }
+  </div>
 </section>

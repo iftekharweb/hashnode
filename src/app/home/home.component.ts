@@ -6,16 +6,17 @@ import { Post } from '../models/app.models';
 import { dummyAuthors, dummyImages } from '../utils/dummyData';
 import { PostServicesService } from '../services/post-services/post-services.service';
 import { ProfileComponent } from '../components/home/profile/profile.component';
+import { BlogCardComponent } from '../components/blog-card/blog-card.component';
 
 @Component({
   selector: 'app-home',
-  imports: [FeaturedMainComponent, FeaturedSidebarComponent, ProfileComponent],
+  imports: [FeaturedMainComponent, FeaturedSidebarComponent, ProfileComponent, BlogCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
   httpService = inject(HttpServicesService);
-  postService = inject(PostServicesService)
+  postService = inject(PostServicesService);
 
   ngOnInit(): void {
     this.fetchAllPosts();
