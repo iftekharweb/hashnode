@@ -5,10 +5,11 @@ import { HttpServicesService } from '../services/http-services.service';
 import { Post } from '../models/app.models';
 import { dummyAuthors, dummyImages } from '../utils/dummyData';
 import { PostServicesService } from '../services/post-services/post-services.service';
+import { ProfileComponent } from '../components/home/profile/profile.component';
 
 @Component({
   selector: 'app-home',
-  imports: [FeaturedMainComponent, FeaturedSidebarComponent],
+  imports: [FeaturedMainComponent, FeaturedSidebarComponent, ProfileComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
