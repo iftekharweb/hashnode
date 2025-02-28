@@ -1,0 +1,60 @@
+<div class="w-full border-b border-gray-200 pt-7 pb-4 px-8">
+  <div class="flex justify-between items-center mb-5">
+    <p class="text-2xl font-bold">Iftekhar Md Shishir</p>
+    <div class="flex text-gray-800">
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center"
+      >
+        <mat-icon>bedtime</mat-icon>
+      </button>
+      <button
+        class="rounded-full p-2 hover:bg-gray-200 flex justify-center items-center"
+      >
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="flex justify-between items-center">
+    <div class="flex gap-2 justify-center items-center">
+      <a href="" class="h-8 w-8 p-2 rounded-full hover:bg-gray-200"
+        ><img src="/twitter.png" alt="twitter" class="object-contain"
+      /></a>
+      <a href="" class="h-8 w-8 p-2 rounded-full hover:bg-gray-200"
+        ><img src="/instagram.png" alt="twitter" class="object-contain"
+      /></a>
+      <a href="" class="h-8 w-8 p-2 rounded-full hover:bg-gray-200"
+        ><img src="/github.png" alt="twitter" class="object-contain"
+      /></a>
+      <a href="" class="h-8 w-8 p-2 rounded-full hover:bg-gray-200"
+        ><img src="/globe-earth.png" alt="twitter" class="object-contain"
+      /></a>
+      <a href="" class="h-8 w-8 p-2 rounded-full hover:bg-gray-200"
+        ><img src="/wi-fi.png" alt="twitter" class="object-contain"
+      /></a>
+    </div>
+    <div class="flex justify-center items-center gap-2">
+      <button
+        class="flex justify-center items-center rounded-3xl px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white gap-1"
+      >
+        <mat-icon>person_add</mat-icon>
+        <p>Follow</p>
+      </button>
+      <button
+        class="rounded-full p-2 hover:bg-blue-200 border border-blue-500 flex justify-center items-center"
+      >
+        <mat-icon class="text-blue-600">mark_email_unread</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex justify-center items-center gap-3 mt-6">
+    <button class="py-1 px-2 rounded-xl hover:bg-gray-100 {{isHomeTab() ? 'font-semibold': ''}}" (click)="toggleTabs(true)" routerLink="/home">Home</button>
+    <button class="py-1 px-2 rounded-xl hover:bg-gray-100 {{isHomeTab() ? '': 'font-semibold'}}" (click)="toggleTabs(false)" routerLink="/newsletter">Newsletter</button>
+  </div>
+  <nav></nav>
+</div>
