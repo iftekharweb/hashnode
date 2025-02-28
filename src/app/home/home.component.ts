@@ -3,7 +3,8 @@ import { FeaturedMainComponent } from '../components/home/featured-main/featured
 import { FeaturedSidebarComponent } from '../components/home/featured-sidebar/featured-sidebar.component';
 import { HttpServicesService } from '../services/http-services.service';
 import { Post } from '../models/app.models';
-import { dummyImages } from '../utils/dummyData';
+import { dummyAuthors, dummyImages } from '../utils/dummyData';
+import { PostServicesService } from '../services/post-services/post-services.service';
 
 @Component({
   selector: 'app-home',
@@ -12,18 +13,17 @@ import { dummyImages } from '../utils/dummyData';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
-  postService = inject(HttpServicesService);
-  allPosts = signal<Post[]>([]);
+  httpService = inject(HttpServicesService);
+  postService = inject(PostServicesService)
 
   ngOnInit(): void {
-    // this.fetchAllPosts();
-    //  this.sliceFirstSixPosts();
+    this.fetchAllPosts();
   }
 
   fetchAllPosts() {
-    this.postService.getPosts().subscribe({
+    this.httpService.getPosts().subscribe({
       next: (res) => {
-        this.allPosts.set(res);
+        this.sliceFirstSixPosts(res);
       },
       error: (err:any) => {
         console.error(err);
@@ -32,14 +32,17 @@ export class HomeComponent implements OnInit{
     });
   }
 
-  sliceFirstSixPosts() {
-    const sixPosts = this.allPosts().slice(0,6); 
+  sliceFirstSixPosts(posts: Post[]) {
+    const sixPosts = posts.slice(0,6); 
     const updated = sixPosts?.map((post, index) => {
       return {
         ...post,
-        imageUrl: dummyImages[index]
+        imgUrl: dummyImages[index],
+        authonName: dummyAuthors[index%2].authorName,
+        authorImage: dummyAuthors[index%2].authorImage,
+        readTimes: dummyAuthors[index%2].readTimes
       }
     })
-    this.allPosts.set(updated);
+    this.postService.posts.set(updated);
   }
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { AuthorComponent } from '../author/author.component';
+import { Post } from '../../models/app.models';
 
 @Component({
   selector: 'app-blog-card',
@@ -8,5 +9,5 @@ import { AuthorComponent } from '../author/author.component';
   styleUrl: './blog-card.component.css'
 })
 export class BlogCardComponent {
-
+  post = input<Post>();
 }

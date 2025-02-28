@@ -12,7 +12,7 @@ export class HttpServicesService {
   url = environment.apiUrl;
 
   getPosts() : Observable<Post[]> {
-    return this.http.get<Post[]>(this.url + 'posts') || [];
+    return this.http.get<Post[]>(this.url + 'posts');
   }
   getPhotos() : Observable<any> {
     return this.http.get(this.url + 'photos');

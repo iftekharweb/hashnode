@@ -1,4 +1,5 @@
 <div>
-    <app-blog-card/>
-    <app-blog-card/>
+    @for(post of posts(); track $index) {
+        <app-blog-card [post]="post"/>
+    }
 </div>

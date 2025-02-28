@@ -5,4 +5,7 @@ export interface Post {
     body: string;
     userId: number;
     imgUrl: string;
+    authonName: string;
+    authorImage: string;
+    readTimes: number;
 }
